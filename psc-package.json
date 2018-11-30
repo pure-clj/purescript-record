@@ -1,0 +1,14 @@
+{
+    "name": "purescript-record",
+    "set": "master",
+    "source": "https://github.com/pure-clj/package-sets.git",
+    "depends": [
+        "functions",
+        "prelude",
+        "st",
+        "typelevel-prelude",
+        "unsafe-coerce",
+
+        "assert"
+    ]
+}

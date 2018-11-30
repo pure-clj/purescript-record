@@ -25,12 +25,11 @@ foreign import unsafeModify :: forall a b r1 r2. String -> (a -> b) -> Record r1
 foreign import unsafeDelete :: forall r1 r2. String -> Record r1 -> Record r2
 foreign import unsafeRename :: forall r1 r2. String -> String -> Record r1 -> Record r2
 
--- | A `Builder` can be used to `build` a record by incrementally adding
--- | fields in-place, instead of using `insert` and repeatedly generating new
--- | immutable records which need to be garbage collected.
--- |
--- | The mutations accumulated in a `Builder` are safe because intermediate states can't be
--- | observed. These mutations, then, are performed all-at-once in the `build` function.
+-- | `Builder`s are mostly useless for the Clojure backend as Clojure already
+-- | has persistent maps that don't generate garbage as one add, modify
+-- | or remove keys/values.
+-- | The normal record functions should be used instead of this module as
+-- | they do the same thing: there's no mutation going on in this module.
 -- |
 -- | The `Category` instance for `Builder` can be used to compose builders.
 -- |
